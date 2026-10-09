@@ -574,7 +574,7 @@ test "Parser.parseWithOptions progress callback" {
     try parser.setLanguage(@ptrCast(language));
 
     // A large input so the progress callback is invoked mid-parse.
-    const source: []const u8 = "int a;\n" ** 5000;
+    const source: []const u8 = &@as([7 * 5000]u8, @bitCast(@as([5000][7]u8, @splat("int a;\n".*))));
     const Ctx = struct {
         src: []const u8,
         fn read(payload: ?*anyopaque, byte_index: u32, _: ts.Point, bytes_read: *u32) callconv(.c) [*c]const u8 {
@@ -671,9 +671,9 @@ test "refAllDecls" {
     }) |T| testing.refAllDecls(T);
 
     inline for (comptime std.meta.declarations(ts.Parser)) |decl| {
-        if (comptime std.mem.eql(u8, decl.name, "setWasmStore") or
-            std.mem.eql(u8, decl.name, "takeWasmStore")) continue;
-        _ = &@field(ts.Parser, decl.name);
+        if (comptime std.mem.eql(u8, decl, "setWasmStore") or
+            std.mem.eql(u8, decl, "takeWasmStore")) continue;
+        _ = &@field(ts.Parser, decl);
     }
 
     if (comptime build.enable_wasm) {
