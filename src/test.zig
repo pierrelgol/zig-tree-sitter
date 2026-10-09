@@ -39,15 +39,15 @@ test "LookaheadIterator" {
 
     try testing.expectEqual(language, lookahead.language());
     try testing.expectEqual(0xFFFF, lookahead.currentSymbol());
-    try testing.expectEqualStrings("ERROR", lookahead.currentSymbolName());
+    try testing.expect(lookahead.currentSymbolName() == null);
 
     try testing.expect(lookahead.next());
     try testing.expectEqual(160, lookahead.currentSymbol());
-    try testing.expectEqualStrings("comment", lookahead.currentSymbolName());
+    try testing.expectEqualStrings("comment", lookahead.currentSymbolName().?);
 
     try testing.expect(lookahead.next());
     try testing.expectEqual(0, lookahead.currentSymbol());
-    try testing.expectEqualStrings("end", lookahead.currentSymbolName());
+    try testing.expectEqualStrings("end", lookahead.currentSymbolName().?);
 
     try testing.expect(!lookahead.next());
     try testing.expect(lookahead.resetState(state));

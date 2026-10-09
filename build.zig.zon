@@ -9,8 +9,8 @@
             .hash = "tree_sitter-0.28.0-Tw2sR77NDQDIIT8ImFU7_S1r-e8RbNCJxp01W9k4bpHv",
         },
         .@"tree-sitter-c" = .{
-            .url = "git+https://github.com/pierrelgol/tree-sitter-c#237aa5390b4cb0e76b2f97be0caabd787b04b6fc",
-            .hash = "tree_sitter_c-0.24.2-y5boS-xtQACyvPfhqN3p_Ero97tdRzQ1SvK6b7HhWTzE",
+            .url = "git+https://github.com/pierrelgol/tree-sitter-c#67949e4c8dc630c18a522919f2bde2e025a0d025",
+            .hash = "tree_sitter_c-0.24.2-y5boS-htQACe3pz6jHq4tpS8dB6WIo4-zk_ct7lAjvQT",
         },
     },
     .paths = .{
