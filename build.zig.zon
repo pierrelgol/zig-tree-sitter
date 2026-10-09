@@ -4,11 +4,6 @@
     .version = "0.26.0",
     .minimum_zig_version = "0.17.0",
     .dependencies = .{
-        .@"tree-sitter-c" = .{
-            .url = "git+https://github.com/tree-sitter/tree-sitter-c#b780e47fc780ddc8da13afa35a3f4ed5c157823d",
-            .hash = "tree_sitter_c-0.24.2-y5boS-ptQADHoCoVfjGT_nFtFQ5LbomIkW0fxG3_cmdB",
-            .lazy = true,
-        },
         .tree_sitter = .{
             .url = "git+https://github.com/pierrelgol/tree-sitter#55b132b8da13fba952738cb7117c03d929616b49",
             .hash = "tree_sitter-0.28.0-Tw2sR77NDQDIIT8ImFU7_S1r-e8RbNCJxp01W9k4bpHv",
